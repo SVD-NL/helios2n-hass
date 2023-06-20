@@ -1,0 +1,16 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device already configured"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host",
+					"username": "Username",
+                    "password": "Password"                    
+                }
+            }
+        }
+   }
+}
