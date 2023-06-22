@@ -1,14 +1,14 @@
 {
 	"domain": "helios2n",
 	"name": "2n/Helios",
-	"codeowners": "@SVD-NL",
+	"codeowners": ["@SVD-NL"],
 	"dependencies": [],
 	"documentation": "https://github.com/SVD-NL/helios2n-hass",
 	"iot_class": "local_polling",
 	"issue_tracker": "https://github.com/SVD-NL/helios2n-hass/issues",
 	"integration_type": "hub",
 	"requirements": [
-		"py2n>=0.3.2"
+		"py2n=0.3.2"
 	],
 	"version": "0.2.2",
 	"config_flow": true
