@@ -31,13 +31,13 @@ class Helios2nLockEntity(LockEntity):
         self._attr_unique_id = f"{self._device.data.serial}_switch_{switch_id}"
         self._attr_name = f"Switch {switch_id}"
         self._switch_id = switch_id
-    
+
     async def async_update(self):
         try:
-            await self._device.update()
+            await self._device.update_switch_status()
         except:
             _LOGGER.exception(self._device)
-    
+
 
     @property
     def device_info(self) ->DeviceInfo:
@@ -56,19 +56,15 @@ class Helios2nLockEntity(LockEntity):
         return not self._device.get_switch(self._switch_id)
 
     async def async_unlock(self) -> Coroutine[Any, Any, None]:
-        self._attr_is_unlocking = True
         try:
             await self._device.set_switch(self._switch_id, True)
-            self._attr_is_unlocking = False
+            await self.async_update_ha_state(True)
         except:
             _LOGGER.exception(self._device)
-            self._attr_is_unlocking = False
-            
+
     async def async_lock(self) -> Coroutine[Any, Any, None]:
-        self._attr_is_locking = True
         try:
             await self._device.set_switch(self._switch_id, False)
-            self._attr_is_locking = False
+            await self.async_update_ha_state(True)
         except:
             _LOGGER.exception(self._device)
-            self._attr_is_locking = False
