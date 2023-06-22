@@ -6,7 +6,7 @@
 	"documentation": "https://github.com/SVD-NL/helios2n-hass",
 	"iot_class": "local_polling",
 	"issue_tracker": "https://github.com/SVD-NL/helios2n-hass/issues",
-	"integration_type": "hub",
+	"integration_type": "device",
 	"requirements": [
 		"py2n==0.3.2"
 	],
