@@ -33,11 +33,7 @@ class Helios2nLockEntity(LockEntity):
         self._switch_id = switch_id
 
     async def async_update(self):
-        try:
-            await self._device.update_switch_status()
-        except:
-            _LOGGER.exception(self._device)
-
+        await self._device.update_switch_status()
 
     @property
     def device_info(self) ->DeviceInfo:
@@ -56,15 +52,9 @@ class Helios2nLockEntity(LockEntity):
         return not self._device.get_switch(self._switch_id)
 
     async def async_unlock(self) -> Coroutine[Any, Any, None]:
-        try:
-            await self._device.set_switch(self._switch_id, True)
-            await self.async_update_ha_state(True)
-        except:
-            _LOGGER.exception(self._device)
+        await self._device.set_switch(self._switch_id, True)
+        await self.async_update_ha_state(True)
 
     async def async_lock(self) -> Coroutine[Any, Any, None]:
-        try:
-            await self._device.set_switch(self._switch_id, False)
-            await self.async_update_ha_state(True)
-        except:
-            _LOGGER.exception(self._device)
+        await self._device.set_switch(self._switch_id, False)
+        await self.async_update_ha_state(True)
