@@ -46,10 +46,8 @@ class Helios2nSwitchButtonEntity(ButtonEntity):
         )
 
     async def async_press(self) -> Coroutine[Any, Any, None]:
-        try:
-            await self._device.set_switch(self._switch_id, True)
-        except:
-            _LOGGER.exception(self._device)
+        await self._device.set_switch(self._switch_id, True)
+
 
 class Helios2nRestartButtonEntity(ButtonEntity):
     _attr_has_entity_name = True
@@ -74,7 +72,4 @@ class Helios2nRestartButtonEntity(ButtonEntity):
         )
 
     async def async_press(self):
-        try:
-            await self._device.restart()
-        except:
-            _LOGGER.exception(self._device)
+        await self._device.restart()
