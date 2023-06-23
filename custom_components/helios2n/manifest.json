@@ -10,6 +10,6 @@
 	"requirements": [
 		"py2n@git+https://github.com/SVD-NL/py2n.git"
 	],
-	"version": "0.3.4-dev",
+	"version": "0.3.4-beta",
 	"config_flow": true
 }
