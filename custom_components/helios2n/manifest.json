@@ -8,8 +8,8 @@
 	"issue_tracker": "https://github.com/SVD-NL/helios2n-hass/issues",
 	"integration_type": "device",
 	"requirements": [
-		"py2n@git+https://github.com/SVD-NL/py2n.git"
+		"py2n==0.4.0"
 	],
-	"version": "0.3.4-beta",
+	"version": "0.3.4",
 	"config_flow": true
 }
