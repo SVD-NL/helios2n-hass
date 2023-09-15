@@ -40,7 +40,6 @@ class Helios2nPortBinarySensorEntity(CoordinatorEntity, BinarySensorEntity):
     @property
     def device_info(self) -> DeviceInfo:
         return DeviceInfo(
-            id = self._device.data.serial,
             identifiers = {(DOMAIN, self._device.data.serial), (DOMAIN, self._device.data.mac)},
             name= self._device.data.name,
             manufacturer = "2n/Helios",
